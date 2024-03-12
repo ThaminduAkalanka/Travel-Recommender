@@ -13,15 +13,15 @@ export default function Home() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    const res = await fetch("https://travelrecommend.tsapp.dev/prompt1", {
+    const res = await fetch("https://travel1.tsapp.dev/rec", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer pk_03915a808a9cbc90f8e84cf28ca5c56f34bbffd52fa6e0d80926f89fcb09b772'
+        'Authorization': 'Bearer pk_d3880bcd61e367615db442bad901eb9e62d476ca274fdafbccb230c6bdcb59f0'
       },
       body: JSON.stringify({"variables":{"place":{"value":placeName}}})
     });
-    
+        
     setResponseText((await res.json()).result);
     setLoading(false);
   }
@@ -60,7 +60,7 @@ export default function Home() {
       <div className="mt-4 w-1/2">
         <div className="mt-2">
         <textarea
-          rows={10}
+          rows={30}
           className={`${styles.textarea}`}
           value={responseText}
           readOnly
