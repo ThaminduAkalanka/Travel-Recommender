@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { MapPinIcon } from "@heroicons/react/20/solid";
 import { Search } from 'lucide-react';
 import { Loader } from 'lucide-react';
@@ -27,7 +27,7 @@ export default function Home() {
     }
   }, [loading, responseText, displayText]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     const res = await fetch("https://travelcomp.tsapp.dev/comp", {
@@ -79,7 +79,7 @@ export default function Home() {
         </form>
         <div className="w-full mt-4">
           <textarea
-            rows={10}
+            rows={16}
             className={`${styles.textarea}`}
             value={displayText}
             readOnly
