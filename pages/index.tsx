@@ -27,6 +27,7 @@ export default function Home() {
   }
 
   return (
+    <div className='flex'>
     <main className={`flex w-full min-h-screen flex-col items-center justify-between p-24 ${inter.className} ${styles.main}`}>
       <form onSubmit={handleSubmit} className="w-1/2">
         <label htmlFor="place" className={`${styles.label}`}>
@@ -68,5 +69,6 @@ export default function Home() {
         </div>
       </div>
     </main>
+    </div>
   )
 }
