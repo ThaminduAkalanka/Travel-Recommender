@@ -13,11 +13,11 @@ export default function Home() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    const res = await fetch("https://travel1.tsapp.dev/rec", {
+    const res = await fetch("https://travelcomp.tsapp.dev/comp", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer pk_d3880bcd61e367615db442bad901eb9e62d476ca274fdafbccb230c6bdcb59f0'
+        'Authorization': 'Bearer pk_91ce36d034a20710c705c6d2ebefa0e0845293b20f951a60ff22cf8a4496ddab'
       },
       body: JSON.stringify({"variables":{"place":{"value":placeName}}})
     });
